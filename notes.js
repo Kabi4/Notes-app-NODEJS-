@@ -20,7 +20,9 @@ const saveNotes = (newNotes) => {
 
 exports.getNote = (title) => {
     const notes = loadNotes();
-    const findNote = notes.findIndex((ele) => ele.title === title);
+    const findNote = notes.findIndex(
+        (ele) => ele.title.toLowerCase() === title.toLowerCase()
+    );
     if (findNote !== -1) {
         log(
             `Task ${notes[findNote].title}: ${notes[findNote].body}`,
@@ -33,7 +35,9 @@ exports.getNote = (title) => {
 
 exports.addNote = (title, body) => {
     const notes = loadNotes();
-    const duplicateNotes = notes.findIndex((ele) => ele.title === title);
+    const duplicateNotes = notes.findIndex(
+        (ele) => ele.title.toLowerCase() === title.toLowerCase()
+    );
     if (duplicateNotes === -1) {
         notes.push({
             title,
@@ -53,10 +57,12 @@ exports.addNote = (title, body) => {
 
 exports.removeNotes = (title) => {
     const notes = loadNotes();
-    const findNote = notes.findIndex((ele) => ele.title === title);
+    const findNote = notes.findIndex(
+        (ele) => ele.title.toLowerCase() === title.toLowerCase()
+    );
     if (findNote !== -1) {
-        const newNotes = notes.slice(findNote - 1, 1);
-        saveNotes(newNotes);
+        notes.splice(findNote, 1);
+        saveNotes(notes);
     } else {
         log('No notes of specific title', 'error');
     }
