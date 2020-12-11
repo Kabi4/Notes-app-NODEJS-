@@ -1,0 +1,15 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "A Simple Notes taking app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "kushagra",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "validator": "^10.8.0"
+  }
+}
