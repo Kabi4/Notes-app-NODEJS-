@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 
-const log = (type, message) => {
+const log = (message, type = 'default') => {
     switch (type) {
         case 'success':
             console.log(chalk.green.bold.bgWhite(message));
