@@ -4,7 +4,7 @@
   "description": "A Simple Notes taking app",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "kushagra",
   "license": "ISC",
