@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const log = (message, type = 'default') => {
     switch (type) {
         case 'success':
-            console.log(chalk.green.bold.bgWhite(message));
+            console.log(chalk.green.bold(message));
             break;
         case 'warning':
             console.log(chalk.yellow.bgBlue.bold(message));
